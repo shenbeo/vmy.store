@@ -3,11 +3,11 @@ import news1 from "../assets/banner1.webp";
 import news2 from "../assets/banner2.webp";
 export default function News() {
   return (
-    <div className="md:py-16 pt-12">
+    <div className="md:py-14 pt-10">
       <div className="flex items-center justify-center ">
-        <h1 className=" md:text-4xl text-2xl uppercase border-b-[4px] border-rose-500 md:mb-10 mb-4 pb-2">
+        <h2 className="md:text-2xl text-xl uppercase font-medium md:mb-10 mb-4 pb-2">
           ưu đãi hôm nay
-        </h1>
+        </h2>
       </div>
 
       <div className="md:flex item-center justify-center">

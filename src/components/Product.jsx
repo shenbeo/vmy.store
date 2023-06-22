@@ -13,13 +13,13 @@ export default function Product({ pro }) {
         <Sekeleton />
       ) : (
         <div>
-          <div className="mt-4 relative overflow-hidden group transition">
-            <div className=" w-full h-full flex justify-center items-center">
+          <div className="relative overflow-hidden group transition">
+            <div className=" w-full h-full  flex justify-center items-center">
               {/* IMAGE */}
-              <div className=" mx-auto flex items-center justify-center">
+              <div className=" mx-auto  flex items-center justify-center">
                 <Link to={`/product/${id}`}>
                   <img
-                    className="group-hover:scale-110 object-cover duration-300 transition"
+                    className="group-hover:scale-110  object-cover duration-300 transition"
                     src={img}
                     alt=""
                   />
@@ -27,11 +27,11 @@ export default function Product({ pro }) {
               </div>
             </div>
             {/*  AND AND DETAIL*/}
-            <div className="top-0 -right-11 group-hover:right-5 absolute  flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 p-2 transition-all duration-300">
+            <div className="top-0 -right-11 group-hover:right-5  absolute  flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 p-2 transition-all duration-300">
               <button onClick={() => addToCart(pro, id)}>
                 <div
                   onClick={success}
-                  className="flex items-center bg-rose-500 justify-center text-white w-12 h-12"
+                  className="flex items-center rounded hover:bg-red-400 duration-700 bg-red-600 justify-center text-white w-12 h-12"
                 >
                   <h1 className="text-3xl ri-add-line"></h1>
                 </div>
@@ -39,7 +39,7 @@ export default function Product({ pro }) {
 
               <Link
                 to={`/product/${id}`}
-                className="w-12 h-12  bg-white flex justify-center items-center text-primary drop-shadow-xl"
+                className="w-12 h-12 bg-white hover:bg-[#f2f2f2] duration-700 rounded flex justify-center items-center text-primary drop-shadow-xl"
               >
                 <i className="ri-eye-line"></i>
               </Link>
@@ -47,15 +47,15 @@ export default function Product({ pro }) {
           </div>
 
           {/*  */}
-          <div className="mt-3">
-            <div className="text-sm flex items-end justify-between capitalize text-gray-500 my-1">
+          <div className="mt-3 px-2 pb-2">
+            <div className="text-xs flex items-end justify-between capitalize text-gray-500 my-1">
               <span>{category}</span>
               <span>Size: {size}</span>
             </div>
             <a>
-              <h2 className="font-medium uppercase mb-1">{title}</h2>
+              <h2 className="font-medium mt-2 mb-2">{title}</h2>
             </a>
-            <div className=" font-medium text-rose-500">
+            <div className=" font-semibold text-red-500">
               {price}
               <span className="ml-1 underline">đ</span>
             </div>

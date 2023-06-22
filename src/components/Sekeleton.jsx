@@ -10,7 +10,7 @@ export default function Sekeleton() {
           <div className="h-5 w-8/12 rounded-full bg-neutral-200"></div>
           <div className="space-y-1">
             <div className="h-4 w-full rounded-full bg-neutral-200 shadow"></div>
-            <div className="h-4 w-full rounded-full bg-neutral-200 shadow"></div>
+            {/* <div className="h-4 w-full rounded-full bg-neutral-200 shadow"></div> */}
           </div>
           <div className="flex gap-2">
             <div className="h-5 w-16 rounded-full bg-neutral-200"></div>

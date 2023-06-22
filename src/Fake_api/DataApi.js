@@ -74,14 +74,14 @@ export const dataApi = [
     category: "váy",
     size: "2XL",
   },
-  {
-    id: 10,
-    img: "./image/vay6.webp",
-    title: "váy liền nữ",
-    price: "699.000",
-    category: "váy",
-    size: "M",
-  },
+  // {
+  //   id: 10,
+  //   img: "./image/vay6.webp",
+  //   title: "váy liền nữ",
+  //   price: "699.000",
+  //   category: "váy",
+  //   size: "M",
+  // },
 
   // ao nam
   {

@@ -134,6 +134,10 @@ export const AppProvider = ({ children }) => {
     setCart([]);
   };
 
+
+
+
+
   return (
     <AppContext.Provider
       value={{
@@ -160,6 +164,8 @@ export const AppProvider = ({ children }) => {
         success,
         loading,
         setLoading,
+
+
       }}
     >
       {children}

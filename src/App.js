@@ -16,9 +16,8 @@ function App() {
       <Router>
         <Suspense
           fallback={
-            <div>
-              <Loader />
-            </div>
+            <p className=" text-sm">Loading...</p>
+
           }
         >
           <Header />

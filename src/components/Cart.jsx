@@ -20,7 +20,7 @@ export default function  Cart  ({ item }) {
               </div>
               <div
                 onClick={() => removeFromCart(id)}
-                className=" hover:bg-[#cccccc7e] w-5 h-5 flex items-center justify-center rounded-full"
+                className=" hover:bg-[#cccccc7e] w-5 h-5 flex items-center justify-center rounded-full duration-700"
               >
                 <i className="ri-close-fill cursor-pointer"></i>
               </div>
@@ -55,7 +55,7 @@ export default function  Cart  ({ item }) {
   
             <div className="flex justify-between items-center">
               <h1 className="bg-[#cccccc7e] p-1">Tạm tính: </h1>
-              <div className="flex text-rose-500 font-medium">
+              <div className="flex font-medium">
                 <span>{` ${parseFloat(price * amount).toFixed(3)}`}</span>
                 <h1 className="ml-1 underline">đ</h1>
               </div>

@@ -11,7 +11,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Sider() {
   return (
-    <div className="flex items-center justify-start pt-16 md:pt-0">
+    <div className="flex items-center justify-start pt-12 md:pt-0">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -32,7 +32,7 @@ export default function Sider() {
               {dataSider.map((slide, index) => {
                 return (
                   <SwiperSlide key={index}>
-                    <div className=" flex items-center justify-center md:mt-16 ">
+                    <div className=" flex items-center justify-center md:mt-12 ">
                       <img
                         className=" object-cover bg-cover max-h-[40rem] w-[100vw]  duration-500 ease-in-out"
                         src={slide.img}
