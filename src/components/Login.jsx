@@ -72,13 +72,13 @@ export default function Login() {
               <div className="mt-4 w-full">
                 <span className=" flex items-center">
                   <i className="ri-lock-fill mr-1 text-sm text-[#888888]"></i>
-                  Password
+                  Mật khẩu
                 </span>
                 <input
                   className=" outline-none rounded-md border-[1px] border-[#5c5c5c]  bg-transparent p-2 mt-2 text-sm w-full"
                   onChange={(e) => setPassword(e.target.value)}
                   type="password"
-                  placeholder="Password"
+                  placeholder="Mật khẩu"
                 ></input>
               </div>
 

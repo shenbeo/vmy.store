@@ -54,8 +54,8 @@ export default function Register() {
               </div>
               <div className="w-full">
                 <span className="text-white flex items-center">
-                  <i className="ri-mail-fill mr-1 text-sm text-[#888888]"></i>
-                  Email
+                  <i className="ri-user-fill mr-1 text-sm text-[#888888]"></i>
+                  Tên
                 </span>
                 <input
                   className="outline-none mt-2 rounded-md border-[1px] border-[#5c5c5c] bg-transparent p-2 text-sm w-full"
@@ -78,8 +78,8 @@ export default function Register() {
               </div>
               <div className="mt-4 w-full">
                 <span className="text-white flex items-center">
-                  <i className="ri-mail-fill mr-1 text-sm text-[#888888]"></i>
-                  Email
+                  <i className="ri-lock-fill mr-1 text-sm text-[#888888]"></i>
+                  Mật khẩu
                 </span>
                 <input
                   className="outline-none rounded-md border-[1px] border-[#5c5c5c]  bg-transparent p-2 mt-2 text-sm w-full"
