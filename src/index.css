@@ -23,4 +23,49 @@ font-family: 'Montserrat Alternates', sans-serif;
 
 
 
+.start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .start::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/b2.jpg');
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -2;
+  }
+  
+  .start::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -2;
+  }
 
+
+
+
+
+
+@media screen and (max-width:767px){
+    .responsive{
+        display: none;
+    }
+}

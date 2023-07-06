@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../contexts/AppContext";
 
@@ -23,14 +23,22 @@ export default function Header() {
   }
 
   //open menu
-  const [openMenu, setOpenMenu] = useState(false);
+  // const [openMenu, setOpenMenu] = useState(false);
+
+  const [open, setOpen] = useState(false);
+
+  const menuRef = useRef();
+  const imgRef = useRef();
+  window.addEventListener("click", (e) => {
+    if (e.target !== menuRef.current && e.target !== imgRef.current) {
+      setOpen(false);
+    }
+  });
 
   return (
     <header
       className={`${
-        isActive
-          ? " py-2 bg-[#001e2bdd]  shadow-lg  "
-          : " py-2 bg-[#001e2b]"
+        isActive ? " py-2 bg-[#001e2bf1]  shadow-lg  " : " py-2 bg-[#001e2b]"
       } fixed w-full z-30 transition-all duration-700`}
     >
       <div className="container mx-auto flex items-center justify-between h-full w-full">
@@ -58,18 +66,17 @@ export default function Header() {
           <Link className="">
             {/* icon user */}
             <div
-              onClick={() => setOpenMenu(!openMenu)}
-              className="hover:bg-[#ecececeb] bg-[#b4b3b3ba] mr-4 md:mr-0  w-8 h-8 flex items-center justify-center rounded-full duration-500 transition-all cursor-pointer"
-            >
-              <i className="ri-user-line font-extralight"></i>
-            </div>
+              onClick={() => setOpen(!open)}
+              ref={imgRef}
+              className="hover:bg-[#ecececeb] bg-[#b4b3b3ba] ri-user-line font-extralight mr-4 md:mr-0  w-8 h-8 flex items-center justify-center rounded-full duration-500 transition-all cursor-pointer"
+            ></div>
             {/* list menu */}
             <div>
-              {localStorage.getItem("user-info") ? (
+              {/* {localStorage.getItem("user-info") ? (
                 <div>
                   <div>
-                    {openMenu && (
-                      <div  className=" absolute w-[2rem] mt-4 flex items-center justify-center">
+                    {open && (
+                      <div ref={menuRef}  className=" absolute w-[2rem] mt-4 flex items-center justify-center">
                         {localStorage.getItem("user-info") ? (
                           <div className="bg-[#969696] flex flex-col">
                             <div
@@ -84,30 +91,31 @@ export default function Header() {
                     )}
                   </div>
                 </div>
-              ) : (
-             
-                  <div >
-                    {openMenu && (
-                      <div className=" absolute w-[2rem] mt-4 flex items-center justify-center">
-                        <div className="bg-[#adadad] flex flex-col">
-                          <Link
-                            className="pr-6 px-2 py-1 hover:bg-[#cacaca] transition-all duration-500 hover:text-black border-b-[1px] border-[#ccc]"
-                            to="/login"
-                          >
-                            Login
-                          </Link>
-                          <Link
-                            className="pr-6 px-2 py-1 hover:bg-[#cacaca] transition-all duration-500 hover:text-black"
-                            to="/register"
-                          >
-                            Register
-                          </Link>
-                        </div>
-                      </div>
-                    )}
+              ) : ( */}
+
+              <div>
+                {open && (
+                  <div
+                    ref={menuRef}
+                    className=" absolute w-[2rem] mt-2 flex items-center justify-center"
+                  >
+                    <div className="bg-[#adadad] flex flex-col">
+                      <Link
+                        className="pr-6 px-2 py-1 hover:bg-[#7b7b7b] transition-all duration-500 hover:text-white border-b-[1px] border-[#ccc]"
+                        to="/login"
+                      >
+                        Login
+                      </Link>
+                      <Link
+                        className="pr-6 px-2 py-1 hover:bg-[#7b7b7b] transition-all duration-500 hover:text-white"
+                        to="/register"
+                      >
+                        Register
+                      </Link>
+                    </div>
                   </div>
-              
-              )}
+                )}
+              </div>
             </div>
           </Link>
         </div>
