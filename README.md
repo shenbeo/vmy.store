@@ -1,4 +1,4 @@
-# Link demo: https://shenbeo.github.io/vmy.store
+Link demo: https://shenbeo.github.io/vmy.store
 
 # Getting Started with Create React App
 
