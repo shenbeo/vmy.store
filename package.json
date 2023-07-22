@@ -1,6 +1,5 @@
 {
   "name": "vmy.store",
-  "homepage": "https://shenbeo.github.io/vmy.store/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

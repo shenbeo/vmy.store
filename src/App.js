@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Suspense fallback={<p className=" text-lg m-3">Loading....</p>}>
+        <Suspense fallback={<p className=" text-sm m-3">Loading....</p>}>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

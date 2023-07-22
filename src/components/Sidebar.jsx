@@ -3,8 +3,7 @@ import { AppContext } from "../contexts/AppContext";
 import Cart from "./Cart";
 
 export default function Sidebar() {
-  const { isOpen, handleClose, cart, clearCart, total } =
-    useContext(AppContext);
+  const { isOpen, handleClose, cart, clearCart, total } = useContext(AppContext);
 
   return (
     <div

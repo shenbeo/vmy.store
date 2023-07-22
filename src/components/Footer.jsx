@@ -3,11 +3,10 @@ import bct from "../assets/icon/bocongthuong.png";
 
 import pay from "../assets/icon/pay.png";
 
-export default function Footer ()  {
+export default function Footer() {
   return (
     <div className="  bg-[#001e2b] text-xs md:py-10 py-8">
       <div className="md:flex px-4 items-start justify-between container md:mx-auto">
-
         {/* N1 */}
         <div className="  flex-1 md:mb-0 mb-4 ">
           <div className="flex items-center font_logo justify-center font-bold text-sm  bg-[#00684a] w-20 py-2 mb-3   text-[#ffffff]">
@@ -24,15 +23,15 @@ export default function Footer ()  {
                 Địa chỉ 2: <span>Võ Oanh, Bình Thạnh, TP.HCM</span>
               </li>
               <li className="mb-2">
-                Email: 
+                Email:
                 <span className=" hover:text-[#5d78f1cc] duration-500 transition-all cursor-pointer ">
-                   contact@vmystore.com
+                  contact@vmystore.com
                 </span>
               </li>
               <li className="mb-2">
                 Fax:
                 <span className=" hover:text-[#5d78f1cc] duration-500 transition-all cursor-pointer ">
-                +8424 - 0000.0000
+                  +8424 - 0000.0000
                 </span>
               </li>
               <li className="mb-1">
@@ -72,7 +71,6 @@ export default function Footer ()  {
           </div>
         </div>
 
-
         {/* N3 */}
         <div className="  flex-1 md:mb-0 mb-4">
           <h1 className=" text-lg font-medium mb-2 text-[#e9e4e4]">
@@ -96,7 +94,7 @@ export default function Footer ()  {
                 Hệ thống cửa hàng
               </li>
               <li className=" hover:text-[#5d78f1cc] duration-500 transition-all cursor-pointer mb-1">
-               Liên hệ
+                Liên hệ
               </li>
             </ul>
           </div>
@@ -143,20 +141,19 @@ export default function Footer ()  {
         </div>
         {/* N5 */}
         <div className="  flex-1 md:mb-0 mb-4">
-        <h1 className=" text-lg font-medium mb-2 text-[#e9e4e4]">Phương thức thanh toán</h1>
-        <div>
+          <h1 className=" text-lg font-medium mb-2 text-[#e9e4e4]">
+            Phương thức thanh toán
+          </h1>
+          <div>
             <img src={pay} alt="" />
-        </div>
-        <div className="mt-2">
+          </div>
+          <div className="mt-2">
             <img src={bct} alt="" />
-        </div>
-
+          </div>
         </div>
       </div>
 
-
-        
-        {/*  */}
+      {/*  */}
       <div className="border-t border-gray-600  mt-6 font-extralight">
         <div className="md:flex items-center justify-between container mx-auto mt-6 md:px-0 px-4 ">
           <div className=" flex-1 text-sm text-[#e9e4e4] md:mb-0 mb-4 ">
@@ -166,6 +163,4 @@ export default function Footer ()  {
       </div>
     </div>
   );
-};
-
- 
+}

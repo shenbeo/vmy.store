@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Loader ()  {
+export default function Loader() {
   return (
     <div className="flex items-center justify-center w-full h-full">
       <img
@@ -10,5 +10,4 @@ export default function Loader ()  {
       />
     </div>
   );
-};
-
+}

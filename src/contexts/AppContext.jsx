@@ -6,12 +6,14 @@ export const AppContext = createContext({});
 
 export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState();
-
   const [products, setProducts] = useState(dataApi); //API
 
+
+  // 
   const success = () => {
     toast.success("Sản phẩm đã vào giỏ hàng!");
   };
+
 
   // open/close cart
   const [isOpen, setIsOpen] = useState(false);
@@ -19,11 +21,13 @@ export const AppProvider = ({ children }) => {
     setIsOpen(false);
   };
 
+
   // open/close user
   const [isOpenUser, setIsOpenUser] = useState(false);
   const handleCloseUser = () => {
     setIsOpenUser(false);
   };
+
 
   // search
   const handleSearch = (e) => {
@@ -38,6 +42,7 @@ export const AppProvider = ({ children }) => {
     }, 1200);
   };
 
+
   // sort
   const filterResult = (catItem) => {
     const result = dataApi.filter((curDate) => {
@@ -50,11 +55,15 @@ export const AppProvider = ({ children }) => {
     }, 1200);
   };
 
+
   //cart
   const [cart, setCart] = useState([]);
 
+
   //item amount stae
   const [itemAmount, setItemAmount] = useState(0);
+
+
   // update item amount
   useEffect(() => {
     if (cart) {
@@ -65,6 +74,7 @@ export const AppProvider = ({ children }) => {
     }
   }, [cart]);
 
+
   // total price
   const [total, setTotal] = useState(0);
   useEffect(() => {
@@ -73,6 +83,7 @@ export const AppProvider = ({ children }) => {
     }, 0);
     setTotal(total);
   });
+
 
   // add to cart
   const addToCart = (product, id) => {
@@ -96,6 +107,7 @@ export const AppProvider = ({ children }) => {
     }
   };
 
+
   //remove from cart
   const removeFromCart = (id) => {
     const newCart = cart.filter((item) => {
@@ -104,11 +116,13 @@ export const AppProvider = ({ children }) => {
     setCart(newCart);
   };
 
+
   //increase amount
   const increaseAmount = (id) => {
     const cartItem = cart.find((item) => item.id === id);
     addToCart(cartItem, id);
   };
+
 
   //increase amount
   const decreaseAmount = (id) => {
@@ -129,15 +143,14 @@ export const AppProvider = ({ children }) => {
       removeFromCart(id);
     }
   };
+
   // clear cart
   const clearCart = () => {
     setCart([]);
   };
 
 
-
-
-
+  
   return (
     <AppContext.Provider
       value={{
@@ -164,8 +177,6 @@ export const AppProvider = ({ children }) => {
         success,
         loading,
         setLoading,
-
-
       }}
     >
       {children}

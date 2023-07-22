@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
+
 export default function Sider() {
   return (
     <div className="flex items-center justify-start pt-12 md:pt-0">
@@ -19,9 +20,9 @@ export default function Sider() {
           delay: 3800,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"

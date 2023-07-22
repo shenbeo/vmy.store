@@ -4,11 +4,14 @@ import PropagateLoader from "react-spinners/PropagateLoader";
 import img_register from "../assets/register.png";
 
 export default function Register() {
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
   const [loadingPage, setLoadingPage] = useState(false);
+
+// LOADING
   useEffect(() => {
     setLoadingPage(true);
     setTimeout(() => {
@@ -16,6 +19,7 @@ export default function Register() {
     }, 2000);
   }, []);
 
+  // SIGNUP
   async function signUp() {
     let item = { name, email, password };
 
@@ -32,6 +36,7 @@ export default function Register() {
     navigate("/login");
   }
 
+
   return (
     <div className=" start text-white">
       {loadingPage ? (
@@ -47,7 +52,7 @@ export default function Register() {
       ) : (
         <div className=" md:h-[100vh]   flex flex-col md:items-center w-full h-full md:w-auto md:justify-center">
           <div className="bg-[#1f1f1faf] mt-10 pt-6 md:pt-0 h-full md:h-auto  flex items-center justify-center font-light md:shadow-2xl md:border-[1px] md:border-[#5c5c5c]  md:rounded-md">
-            {/* trái */}
+            {/* LEFT */}
             <div className="flex flex-col items-center justify-center md:min-w-[360px] w-full  p-4 md:mx-4">
               <div className=" text-2xl font-medium mb-4  flex">
                 <h1 className="">ĐĂNG KÝ</h1>
@@ -118,7 +123,7 @@ export default function Register() {
                 </div>
               </div>
             </div>
-            {/* phải */}
+            {/* RIGHT */}
             <div className="responsive">
               <img
                 className=" min-w-[25rem] h-[36rem] object-cover md:rounded-r-md"

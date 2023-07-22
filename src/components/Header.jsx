@@ -4,16 +4,17 @@ import { AppContext } from "../contexts/AppContext";
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
-  const { isOpen, setIsOpen, isOpenUser, setIsOpenUser, itemAmount } =
-    useContext(AppContext);
+  const { isOpen, setIsOpen, isOpenUser, setIsOpenUser, itemAmount } = useContext(AppContext);
+  const [open, setOpen] = useState(false);
 
+  // SCOLL HEADER
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
     });
   });
 
-  //logout
+  //LOGOUT
   let navigate = useNavigate();
   let user = JSON.parse(localStorage.getItem("user-info"));
   console.log(user);
@@ -22,11 +23,7 @@ export default function Header() {
     navigate("/");
   }
 
-  //open menu
-  // const [openMenu, setOpenMenu] = useState(false);
-
-  const [open, setOpen] = useState(false);
-
+  // OPEN MENU USER
   const menuRef = useRef();
   const imgRef = useRef();
   window.addEventListener("click", (e) => {
@@ -34,6 +31,7 @@ export default function Header() {
       setOpen(false);
     }
   });
+
 
   return (
     <header
@@ -72,27 +70,6 @@ export default function Header() {
             ></div>
             {/* list menu */}
             <div>
-              {/* {localStorage.getItem("user-info") ? (
-                <div>
-                  <div>
-                    {open && (
-                      <div ref={menuRef}  className=" absolute w-[2rem] mt-4 flex items-center justify-center">
-                        {localStorage.getItem("user-info") ? (
-                          <div className="bg-[#969696] flex flex-col">
-                            <div
-                               className="pr-6 px-2 py-1 hover:bg-[#cacaca] transition-all duration-500 hover:text-black"
-                              onClick={logOut}
-                            >
-                              Logout
-                            </div>
-                          </div>
-                        ) : null}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ) : ( */}
-
               <div>
                 {open && (
                   <div

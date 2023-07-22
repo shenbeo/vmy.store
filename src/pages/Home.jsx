@@ -4,13 +4,14 @@ import { AppContext } from "../contexts/AppContext";
 import News from "../components/News";
 // import Loader from "../components/Loader";
 import PropagateLoader from "react-spinners/PropagateLoader";
-
 const Sider = React.lazy(() => import("../components/Sider"));
 
 export default function Home() {
-  const { products, setProducts, handleSearch, filterResult, setLoading } =
-    useContext(AppContext);
+  const { products, setProducts, handleSearch, filterResult, setLoading } = useContext(AppContext);
   const [loadingPage, setLoadingPage] = useState(false);
+  const [sorted, setSorted] = useState({ sorted: "id", reversed: false });
+
+  // LOADING
   useEffect(() => {
     setLoadingPage(true);
     setTimeout(() => {
@@ -18,8 +19,7 @@ export default function Home() {
     }, 2000);
   }, []);
 
-  const [sorted, setSorted] = useState({ sorted: "id", reversed: false });
-
+  
   // SORT PRICE
   const sortById1 = () => {
     setSorted({ sorted: "price", reversed: !sorted.reversed });
@@ -53,6 +53,7 @@ export default function Home() {
     }, 1200);
   };
   //END SORT PRICE
+
 
   //SORT TEXT
   const sortByName1 = () => {
@@ -90,8 +91,9 @@ export default function Home() {
       setLoading(false);
     }, 1200);
   };
-
   //END SORT TEXT
+
+
 
   return (
     <section>
@@ -181,28 +183,28 @@ export default function Home() {
                 <h1 className=" font-normal text-sm pl-3">Sắp xếp theo:</h1>
                 {/* sort */}
                 <div className=" flex flex-wrap justify-start items-start text-sm  mb-5 mt-3">
-                  {/* Thấp đến cao */}
+                  {/* */}
                   <div className="flex items-center justify-center rounded-md hover:bg-[#8c8c8c99] bg-[#cccccc70] duration-500 cursor-pointer p-2 m-2">
                     <i className="ri-sort-asc mr-1"></i>
                     <button onClick={sortById1}>Giá thấp - cao</button>
                   </div>
-                  {/* Thấp đến cao */}
+                  {/*  */}
                   <div className="flex items-center justify-center rounded-md hover:bg-[#8c8c8c99] bg-[#cccccc70] duration-500 cursor-pointer p-2 m-2">
                     <i className="ri-sort-desc mr-1"></i>
                     <button onClick={sortById2}>Giá cao - thấp</button>
                   </div>
-                  {/* A-Z */}
+                  {/*  */}
                   <div className="flex items-center justify-center rounded-md hover:bg-[#8c8c8c99] bg-[#cccccc70] duration-500 cursor-pointer p-2 m-2">
                     <i className="ri-filter-3-line mr-1"></i>
                     <button onClick={sortByName1}>Sắp xếp từ A - Z</button>
                   </div>
-                  {/* Z-A */}
+                  {/*  */}
                   <div className="flex items-center justify-center rounded-md hover:bg-[#8c8c8c99] bg-[#cccccc70] duration-500 cursor-pointer p-2 m-2">
                     <i className="ri-filter-3-line mr-1"></i>
                     <button onClick={sortByName2}>Sắp xếp từ Z - A</button>
                   </div>
                 </div>
-                {/* hết sort */}
+                {/* end sort */}
               </div>
 
               <div className="flex items-center justify-center">

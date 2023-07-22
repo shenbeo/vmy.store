@@ -1,5 +1,4 @@
 export const dataApi = [
-  // áo nữ
   {
     id: 1,
     img: "./image/aonu2.webp",
@@ -74,16 +73,7 @@ export const dataApi = [
     category: "váy",
     size: "2XL",
   },
-  // {
-  //   id: 10,
-  //   img: "./image/vay6.webp",
-  //   title: "váy liền nữ",
-  //   price: "699.000",
-  //   category: "váy",
-  //   size: "M",
-  // },
 
-  // ao nam
   {
     id: 11,
     img: "./image/aonam1.webp",
@@ -101,7 +91,6 @@ export const dataApi = [
     size: "XL",
   },
 
-  // quần nam
   {
     id: 13,
     img: "./image/quannam1.webp",
@@ -119,7 +108,6 @@ export const dataApi = [
     size: "31",
   },
 
-  //túi
   {
     id: 15,
     img: "./image/tui2.webp",
@@ -137,7 +125,6 @@ export const dataApi = [
     size: "0",
   },
 
-  //áo khoác
   {
     id: 17,
     img: "./image/aokhoac1.webp",

@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import img_login from "../assets/login.jpg";
+
+
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
   const [loadingPage, setLoadingPage] = useState(false);
+
+// LOADING
   useEffect(() => {
     setLoadingPage(true);
     setTimeout(() => {
@@ -14,12 +18,14 @@ export default function Login() {
     }, 2000);
   }, []);
 
+  // LOCALSTRORAGE
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       navigate("/login");
     }
   }, []);
 
+  // LOGIN
   async function logIn() {
     console.log("data", email.password);
     let item = { email, password };
@@ -36,6 +42,8 @@ export default function Login() {
     navigate("/");
   }
 
+
+  
   return (
     <div className="start text-white">
       {loadingPage ? (
@@ -51,7 +59,7 @@ export default function Login() {
       ) : (
         <div className=" md:h-[100vh]   flex flex-col md:items-center w-full h-full md:w-auto md:justify-center">
           <div className="bg-[#1f1f1faf] mt-10 pt-6 md:pt-0 h-full md:h-auto  flex items-center justify-center font-light md:shadow-2xl md:border-[1px] md:border-[#5c5c5c]  md:rounded-md">
-            {/* trái */}
+            {/* LEFT */}
             <div className="  flex flex-col items-center justify-center md:min-w-[360px] w-full  p-4 md:mx-4">
               <div className=" text-2xl font-medium mb-4  flex">
                 <h1 className="">ĐĂNG NHẬP</h1>
@@ -114,7 +122,7 @@ export default function Login() {
                 </div>
               </div>
             </div>
-            {/* phải */}
+            {/* RIGHT */}
             <div className="responsive">
               <img
                 className=" min-w-[23rem] h-[32rem] object-cover md:rounded-r-md"
